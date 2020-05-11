@@ -32,7 +32,7 @@ export default function Currency(props : { id : number}) {
 
     useEffect(() => {
         dispatch(fetchCurrency(props.id))
-    }, [dispatch]);
+    }, [dispatch, props.id]);
 
     const {
         isLoading,
@@ -73,7 +73,7 @@ export default function Currency(props : { id : number}) {
                                         <TableCell colSpan={1}><span className={theme.info}>CMC rank: </span> {currency.cmc_rank}</TableCell>
                                     </TableRow>
                                     <TableRow> 
-                                        {currency.tags.length != 0 &&
+                                        {currency.tags.length !== 0 &&
                                         <TableCell colSpan={4}><span className={theme.info}>Tags:</span>  {currency.tags.map((tag,i) => (<span key={i}>{tag}</span>))}</TableCell>
                                         }
                                     </TableRow>

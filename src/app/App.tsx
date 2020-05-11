@@ -1,4 +1,6 @@
-import React from "react";
+import React, {useEffect }  from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from './store/store'
 import {
   BrowserRouter,
   Switch,
@@ -8,9 +10,26 @@ import {
 import './App.css';
 import Currencies   from './currencies';
 import Currency from './currency';
+import { fetchCurrencies } from './currencies/CurrenciesSlide';
 
 
 function App() {
+
+  const {
+    direction,
+    field,
+    numberOfRows,
+  } = useSelector((state: RootState) => state.currencies);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+
+    dispatch(fetchCurrencies(1, numberOfRows, field, direction));
+
+  }, [dispatch, numberOfRows, field, direction]);
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -29,8 +48,11 @@ function App() {
 }
 
 function WrapCurrency(){
+
   let { id } = useParams();
+  
   return <Currency id={Number(id)}></Currency>
+
 }
 
 export default App;

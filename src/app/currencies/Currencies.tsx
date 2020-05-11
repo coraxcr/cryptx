@@ -1,4 +1,4 @@
-import React, {useEffect}  from 'react';
+import React  from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -13,7 +13,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import Snackbar from '@material-ui/core/Snackbar';
 import { useHistory } from "react-router-dom";
 import './Currencies.css';
-import { CurrencySummary, setPageNumber, fetchCurrencies } from './CurrenciesSlide';
+import { CurrencySummary, setPageNumber } from './CurrenciesSlide';
 import CurrenciesHeader from './CurrenciesHeader';
 import { RootState } from '../store/store'
 import { formatCrypto } from '../utils'
@@ -49,8 +49,6 @@ export default function Currencies() {
   let history = useHistory();
 
   const {
-    direction,
-    field,
     pageNumber,
     rowsPerPage,
     numberOfRows,
@@ -59,16 +57,17 @@ export default function Currencies() {
     currencies
   } = useSelector((state: RootState) => state.currencies);
 
-  useEffect(() => {
-    dispatch(fetchCurrencies(1, numberOfRows, field, direction))
-  }, [field, direction]);
 
   const handleChangePage = (event: unknown, newPage: number) => {
+
       dispatch(setPageNumber(newPage));
+  
   };
 
   function redirect(currencyId:number){
-    history.replace(`/currency/${currencyId}`);
+
+    history.push(`/currency/${currencyId}`);
+  
   }
 
   return(
@@ -134,7 +133,7 @@ export default function Currencies() {
         autoHideDuration={6000}
         message={`Something was wrong!`}
       />
-    </div>
-    </Paper>
+      </div>
+      </Paper>
   )
 }
