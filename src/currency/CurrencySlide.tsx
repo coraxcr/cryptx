@@ -61,6 +61,7 @@ export const {
 export function fetchCurrency(id:number): AppThunkAction {
   return async (dispatch) => {
     try {
+      dispatch(setCurrency(null));
       dispatch(setIsError(false));
       dispatch(startLoading());
       const currency = await getCurrencyAsync(id);
