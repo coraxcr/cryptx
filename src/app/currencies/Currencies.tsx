@@ -11,49 +11,42 @@ import TableRow from '@material-ui/core/TableRow';
 import { useSelector, useDispatch } from 'react-redux';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Snackbar from '@material-ui/core/Snackbar';
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import './Currencies.css';
 import { CurrencySummary, setPageNumber, fetchCurrencies } from './CurrenciesSlide';
 import CurrenciesHeader from './CurrenciesHeader';
-import { RootState } from '../cryptx-redux/store'
-
+import { RootState } from '../store/store'
+import { formatCrypto } from '../utils'
 
 const useStyles = makeStyles({
-    root: {
-      width: '100%',
-    },
-    container: {
-      maxHeight: 440,
-    },
-  });
+  root: {
+    width: '100%',
+  },
+  container: {
+    maxHeight: 440,
+  },
+});
 
-  interface Column {
-    id: 'name' | 'symbol' | 'market_cap' | 'price';
-    label: string;
-    minWidth?: number;
-    align?: 'right';
-    format?: (value: number) => string;
-  }
+interface Column {
+  id: 'name' | 'symbol' | 'market_cap' | 'price';
+  label: string;
+  minWidth?: number;
+  align?: 'right';
+  format?: (value: number) => string;
+}
   
-  const columns: Column[] = [
-    { id: 'name', label: 'Name', minWidth: 100 },
-    { id: 'symbol', label: 'symbol', minWidth: 100 },
-    { id: 'market_cap', label: 'market_cap', align : "right",  minWidth: 100, format: (value: number) => value.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) },
-    { id: 'price', label: 'price', align : "right", minWidth: 100, format: (value: number) => {
-
-      let maximumFractionDigits = (value >= 1) ? 2 : 8;
-
-      return value.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits}) },
-    
-    }
-  ];
+const columns: Column[] = [
+  { id: 'name', label: 'Name', minWidth: 100 },
+  { id: 'symbol', label: 'symbol', minWidth: 100 },
+  { id: 'market_cap', label: 'market_cap', align : "right",  minWidth: 100, format: (value: number) => value.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) },
+  { id: 'price', label: 'price', align : "right", minWidth: 100, format: formatCrypto },
+];
 
 export default function Currencies() {
 
   const dispatch = useDispatch();
   const classes = useStyles();
   let history = useHistory();
-  let location = useLocation();
 
   const {
     direction,
@@ -63,7 +56,6 @@ export default function Currencies() {
     numberOfRows,
     isLoading, 
     isError,
-    errorMessage,
     currencies
   } = useSelector((state: RootState) => state.currencies);
 
@@ -76,11 +68,11 @@ export default function Currencies() {
   };
 
   function redirect(currencyId:number){
-    history.push(`/currency/${currencyId}`);
+    history.replace(`/currency/${currencyId}`);
   }
 
   return(
-      <Paper className={classes.root}>
+      <Paper className={`${classes.root} currrencies`}>
       <CurrenciesHeader></CurrenciesHeader>    
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table">
@@ -144,6 +136,5 @@ export default function Currencies() {
       />
     </div>
     </Paper>
-
   )
 }

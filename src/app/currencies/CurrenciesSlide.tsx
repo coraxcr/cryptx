@@ -1,6 +1,6 @@
-import { createSlice, Action } from '@reduxjs/toolkit'
-import { getLatestCurrenciesAsync } from '../CoinMarketCapGateway'
-import { AppThunkAction } from '../cryptx-redux/store'
+import { createSlice } from '@reduxjs/toolkit'
+import { getLatestCurrenciesAsync } from '../api/CoinMarketCapGateway'
+import { AppThunkAction } from '../store/store'
 
 export interface CurrencySummary {
   id: number;

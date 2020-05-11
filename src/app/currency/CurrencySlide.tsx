@@ -1,11 +1,40 @@
-import { createSlice, Action } from '@reduxjs/toolkit'
-import { getCurrencyAsync } from '../CoinMarketCapGateway'
-import { AppThunkAction } from '../cryptx-redux/store'
+import { createSlice } from '@reduxjs/toolkit'
+import { getCurrencyAsync } from '../api/CoinMarketCapGateway'
+import { AppThunkAction } from '../store/store'
 
-export interface Currency{
-  id: number;
-  name: string;
-  symbol: string;
+export interface Currency {
+    id: number, 
+    name: string,
+    symbol: string,
+    slug: string,
+    is_active: boolean,
+    is_fiat: boolean,
+    circulating_supply: number,
+    total_supply: number,
+    max_supply: number,
+    date_added: Date,
+    num_market_pairs: number,
+    cmc_rank: number,
+    last_updated: Date,
+    tags: string[],
+    platform: null | {
+      id:number, 
+      name : string,
+      slug: string,
+      symbol:string,
+      token_address: string
+    },
+    quote: {
+    USD: {
+      price: number,
+      volume_24h: number,
+      percent_change_1h: number,
+      percent_change_24h: number,
+      percent_change_7d: number,
+      market_cap: number,
+      last_updated: Date
+    }
+  }
 }
 
 export interface CurrencyState{

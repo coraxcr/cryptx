@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { CurrencySummary } from './currencies/CurrenciesSlide';
-import { Currency } from './currency/CurrencySlide';
+import { CurrencySummary } from '../currencies/CurrenciesSlide';
+import { Currency } from '../currency/CurrencySlide';
 
 interface CurrencySummaryDTO {
     id: number,
