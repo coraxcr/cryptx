@@ -16,7 +16,11 @@ interface CurrencySummaryDTO {
 
 const baseUrl = "https://pro-api.coinmarketcap.com";
 
-const key = "e1fa8df1-38fc-40f4-a739-cf15782fe722";
+//This API key is from a dummy account, so no risk at all.
+//REACT_APP_WARNING_1=ItsJustForDidacticPurposes
+//REACT_APP_WARNING_2=DontExposeSecretsInClient
+//REACT_APP_WARNING_3=DontVersionEnvFilesWithSecrets
+const key = process.env.REACT_APP_COIN_MARKET_CAP_API_KEY;
 
 const config = {
     headers :{
@@ -24,7 +28,6 @@ const config = {
         "Accept": 'application/json'
     }
 }
-
 
 export async function getLatestCurrenciesAsync(start:number, limit:number, fieldName:string, direction : "asc"|"desc") : Promise<CurrencySummary[]> {
 

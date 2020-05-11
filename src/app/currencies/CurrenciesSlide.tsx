@@ -66,7 +66,7 @@ const currenciesSlice = createSlice({
     },
     setErrorMessage(state, action) {
       state.errorMessage = action.payload;
-      console.log(state.isError);
+      console.log(state.errorMessage);
     }
   }
 });

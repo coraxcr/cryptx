@@ -45,7 +45,7 @@ export default function Currency(props : { id : number}) {
             <Grid container spacing={1}>
                 {isLoading &&
                     <Grid item xs={12}>
-                        <LinearProgress variant="query" />
+                        <LinearProgress  variant="query" />
                     </Grid>
                 }
                 {currency &&
