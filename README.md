@@ -54,7 +54,7 @@ serve -s build -l 4000
 ### Notes:
 
 This application uses coinmarketcap.com API, and a token (never add an authentication token on your applications) to fetch data, it's limited to 300 request per day. 
-Use an extension on your browser to disable CORS headers, recommended one: "Allow CORS: Access-Control-Allow-Origin".
+Use an extension on your browser to enable CORS, recommended one: "Allow CORS: Access-Control-Allow-Origin".
 
 ### Disclaimer: 
 This application was created with educational purposes. 
