@@ -1,35 +1,56 @@
 # cryptx
-Criptocurrency app to display latest criptocurrencies and their details.
+Cryptocurrency app to display latest cryptocurrencies and their details.
+This app was made using reactjs, it consists of 2 pages, the first one displays information about cryptocurrencies and the second one detailed information about one cryptocurrency.
+
+### Technologies used
 
 Technology | Version
 ------------ | -------------
-react js | 16.13.1
-redux js | 1.3.5
-material ui | 4.9.13
-node js | 12.16.3
-npm | 6.14.4
+reactjs | 16.13.1
+reduxjs | 1.3.5
+material-ui | 4.9.13
 TypeScript | 3.7.5
+nodejs | 12.16.3
+npm | 6.14.4
+ubuntu | 18.04.2 LTS
 
 
-To run this application in dev-mode you must have installed node js. 
 
-### To install packages use:
+To run this application in dev-mode you must have installed nodejs. 
+
+### To install the packages use:
 ```
 npm install 
 ```
 
-### To run aplication use:
+### To run the application in dev mode use:
 ```
 npm run
 ```
 
-### Production deploy use the following commands:
+### To create the production deploy package use the following command:
 
 ```
 npm run-script build
 ```
+Once you have created the "build" proceed checking the production build with "[Serve](https://github.com/zeit/serve)" service.
 
-## Some feature screenshots
+### Static Server
+
+For environments using Node, the easiest way to handle this would be to install serve and let it handle the rest:
+
+```
+npm install -g serve
+```
+```
+serve -s build
+```
+The last command shown above will serve your static site on the port 5000. Like many of serve’s internal settings, the port can be adjusted using the -l or --listen flags:
+```
+serve -s build -l 4000
+```
+
+## Some feature screenshots:
 
 ![Loading cryptocurrencies!](https://github.com/coraxcr/cryptx/blob/master/documentation/screenshots/1.png "Loading cryptocurrencies")
 *Loading currencies*
