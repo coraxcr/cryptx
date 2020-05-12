@@ -1,6 +1,6 @@
 # cryptx
 Cryptocurrency app to display latest cryptocurrencies and their details.
-This app was made using reactjs, it consists of 2 pages, the first one displays information about cryptocurrencies and the second one detailed information about one cryptocurrency.
+This app was made using reactjs, it consists of 2 pages, the first one displays information about cryptocurrencies and the second one details information about one cryptocurrency.
 
 ### Technologies:
 
