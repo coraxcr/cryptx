@@ -7,7 +7,6 @@ import {
   Route,
   useParams
 } from "react-router-dom";
-import './App.css';
 import Currencies   from './currencies';
 import Currency from './currency';
 import { fetchCurrencies } from './currencies/CurrenciesSlide';
