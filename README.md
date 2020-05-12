@@ -25,7 +25,7 @@ npm install
 
 ### To run the application in dev mode use:
 ```
-npm run
+npm start
 ```
 
 ### To create the production deploy package use the following command:
