@@ -2,7 +2,7 @@
 Cryptocurrency app to display latest cryptocurrencies and their details.
 This app was made using reactjs, it consists of 2 pages, the first one displays information about cryptocurrencies and the second one detailed information about one cryptocurrency.
 
-### Technologies used
+### Technologies:
 
 Technology | Version
 ------------ | -------------
@@ -49,6 +49,18 @@ The last command shown above will serve your static site on the port 5000. Like 
 ```
 serve -s build -l 4000
 ```
+
+
+### Notes:
+
+This application uses coinmarketcap.com API, and a token (never add an authentication token on your applications) to fetch data, it's limited to 300 request per day. 
+Use an extension on your browser to disable CORS headers, recommended one: "Allow CORS: Access-Control-Allow-Origin".
+
+### Disclaimer: 
+This application was created with educational purposes. 
+
+
+
 
 ## Some feature screenshots:
 
