@@ -29,4 +29,29 @@ npm run
 npm run-script build
 ```
 
+## Some feature screenshots
+
+![Loading cryptocurrencies!](https://github.com/coraxcr/cryptx/blob/master/documentation/screenshots/1.png "Loading cryptocurrencies")
+*Loading currencies*
+
+![Display of the cryptocurrencies!](https://github.com/coraxcr/cryptx/blob/master/documentation/screenshots/2.png "Display of the cryptocurrencies")
+*Display of the cryptocurrencies*
+
+
+![Error loading cryptocurrencies!](https://github.com/coraxcr/cryptx/blob/master/documentation/screenshots/3.png "Error loading cryptocurrencies")
+*Error loading cryptocurrencies*
+
+
+![Loading cryptocurrency detailed information!](https://github.com/coraxcr/cryptx/blob/master/documentation/screenshots/4.png "Loading cryptocurrency detailed information")
+*Loading cryptocurrency detailed information*
+
+
+![Displaying cryptocurrency detailed information!](https://github.com/coraxcr/cryptx/blob/master/documentation/screenshots/5.png "Displaying cryptocurrency detailed information")
+*Displaying cryptocurrency detailed information*
+
+
+![Error loading cryptocurrency detailed information!](https://github.com/coraxcr/cryptx/blob/master/documentation/screenshots/6.png "Error loading cryptocurrency detailed information")
+*Error loading cryptocurrency detailed information*
+
+
 
